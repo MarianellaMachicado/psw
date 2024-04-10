@@ -1,0 +1,98 @@
+/*Guias*/
+.section-titulo h2,
+.section-noticias nav
+{
+    border: red solid 2px;
+    border-radius: 7px;
+}
+
+.nav-busqueda ul{
+    border: yelow solid 2px;
+    border-radius: 7px;
+}
+
+
+.noticias-destacadas{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+.card{
+    width: 400px;
+    gap:0;
+    border: #abcee1 solid 2px;
+    border-radius: 15px;
+    background-color: rgb(0,0, 0,0.2);
+    display: flex;
+    flex-direction: column;
+    
+}
+img{
+    height: 90%;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+.card h2{
+    height: 10%;
+    padding: 20px 25px 5px 25px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.section-noticias{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-busqueda{
+    width: 15%;
+    padding: 10px 5px 1px 50px;
+    background-color: rgb(171, 206, 225,0.6);
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.div-buscar{
+    width: 100%;
+}
+.div-buscar input{
+    width: 60%;
+    border: #abcee1 solid 1px;
+    border-radius: 15px;
+}
+.nav-busqueda ul{
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.nav-busqueda ul li{
+    border: red solid 2px;
+    border-radius: 7px;
+    list-style-type: square;
+}
+.nav-busqueda a,.div-buscar label{
+    color: #001224;
+}
+
+.div-noticias{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.div-noticias .card{
+    background-color: rgb(171, 206, 225,0.6);
+}
+.div-noticias img{
+    height: 70%;
+}
+.div-noticias h2{
+    color: #001224;
+    height: 30%;
+}
