@@ -1,17 +1,30 @@
-
-
 .section-opciones{
-   padding-inline: 20px;
+   padding: 20px 50px;
    background-color: #006699;
 }
+.section-opciones ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .section-categorias{
+    height: 80px;
     display: flex;
     justify-content: center;
+    gap: 15px;
+   
 }
-.section-categorias div {
+.section-categorias div { 
     width: 150px;
-    border: red solid 2px;
+    height: 100%;
     border-radius: 7px;
+    background-color: rgb(171, 206, 225);
+    color: black;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 
@@ -24,8 +37,6 @@
     gap: 35px;
 }
 article{
-    border: red solid 2px;
-    border-radius: 7px;
     width: 1000px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -35,8 +46,6 @@ article{
 }
 
 article h2{
-    border: blue solid 2px;
-    border-radius: 7px;
     color: #deedf7;
     font-size: 1.5em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -47,7 +56,6 @@ article h2{
 }
 article div{
     background-color: #006699;
-    border: blueviolet solid 2px;
     border-radius: 0 0 20px 20px;
     padding: 10px;
     height: 100px;
@@ -74,4 +82,12 @@ article .item:nth-child(2){
 
 article .item{
     grid-column: span 1;
+}
+
+.card{
+    transition: transform 0.3s ease;
+}
+
+.card:hover{
+    transform: scale(0.9);
 }

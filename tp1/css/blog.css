@@ -1,0 +1,28 @@
+.section-actividades{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
+article{
+    transition: transform 0.3s ease;
+    display: flex;
+    gap: 30px;
+    padding: 15px;
+    background-color: rgb(86, 88, 93,0.4);
+}
+article:hover{
+    transform: scale(0.9);
+}
+article img{
+    width: 500px;
+    border-radius: 15px;
+}
+
+.noticia{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

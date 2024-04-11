@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Digital - Contacto</title>
+    <link rel="stylesheet" href="css/compartido.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="icon" href="img/gob-jujuy.png" type="image/x-icon">
+</head>
+<body>
+
+<header>
+    <div class="header-logo ">
+        <a href="index.html" class="header-logo-name">
+            <img src="img/gob-jujuy.png" alt="Logo de la página">
+            <h1>Poder Judicial de la Provincia de Jujuy</h1>
+        </a>
+    </div>
+    <nav class="header-opciones">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <!--<li><a href="#">Más ▽</a></li>-->
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="section-titulo">
+        <h2>Contactenos</h2>
+    </section>
+    <section class="section-formulario">
+   
+        <form class="formulario">
+            <div class="form-nombre">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-apellido">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+            </div>
+            <div class="form-documento">
+                <label for="tipo-documento">Tipo de Documento:</label>
+                <select id="tipo-documento" name="tipo-documento" required>
+                    <option value="dni">DNI</option>
+                    <option value="cuit">CUIT</option>
+                </select>
+                <input type="number" id="numero-documento" name="numero-documento" maxlength="11" required>
+            </div>
+            <div class="form-sexo">
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="mujer">Mujer</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="no-informar">No deseo informar</option>
+                </select>
+            </div>
+            <div class="form-estado">
+                <label for="estado-civil">Estado Civil:</label>
+                <select id="estado-civil" name="estado-civil" required>
+                    <option value="casado">Casado/a</option>
+                    <option value="soltero">Soltero/a</option>
+                    <option value="viudo">Viudo/a</option>
+                </select>
+            </div>
+            <div class="form-telefono">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <div class="form-ocupacion">
+                <label for="ocupacion">Ocupación:</label>
+                <select id="ocupacion" name="ocupacion" required>
+                    <option value="empleado-publico">Empleado Público</option>
+                    <option value="ingeniero">Ingeniero</option>
+                    <option value="maestro">Maestro</option>
+                    <option value="estudiante">Estudiante</option>
+                    <option value="desocupado">Desocupado</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-domicilio">
+                <label for="domicilio">Domicilio:</label>
+                <input type="text" id="domicilio" name="domicilio" required>
+            </div>
+            <div class="form-comentarios">
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+            </div>
+            <div class="btn-enviar">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </section>
+</main>
+<footer>
+    <section>
+        <h3>INFORMACIÓN DE CONTACTO</h3>
+        <ul>
+            <li>Jujuy, Argentina</li>
+            <li>0388-4231888</li>
+            <li>prensa@justiciajujuy.gov.ar</li>
+        </ul>
+    </section>
+    <section>
+        <h3>ENLACES DE INTERÉS</h3>
+        <ul>
+            <li>Poderes Judiciales</li>
+            <li>Provincia de Jujuy</li>
+            <li>Nacionales</li>
+            <li>Internacionales</li>
+        </ul>
+        <div>Mapa del Sitio</div>
+    </section>
+    <section>
+        <h3>ESTADÍSTICAS DE VISITAS</h3>
+        <ul>
+            <li>Usuarios online: 25</li>
+            <li>Visitas hoy: 2.521</li>
+            <li>Visitantes hoy: 885</li>
+            <li>Visitantes ayer: 5.529</li>
+            <li>Visitas los últimos 7 días: 24.521</li>
+            <li>Visitas los últimos 30 días: 96.377</li>
+            <li>Visitas los últimos 365 días: 1.036.790</li>
+            <li>Total de visitas: 2.746.714</li>
+        </ul>
+    </section>
+    <section>
+        <img src="img/gob-jujuy.png" alt="Escudo de la Provincia de Jujuy" width="30px">
+        <p>Departamento de Sistemas y Tecnologías de la Información.</p>
+        <p>Poder Judicial de la Provincia de Jujuy</p>
+    </section>
+</footer>
+
+</body>
+</html>

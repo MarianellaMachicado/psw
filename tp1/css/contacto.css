@@ -1,0 +1,105 @@
+main{
+    height: 100vh;
+}
+.section-formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+}
+.formulario{
+    background-color: rgb(86, 88, 93,0.4);
+    border-radius: 15px;
+    width: 800px;
+    padding: 15px;
+    border: grey solid 2px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: 50px;
+    gap: 5px;
+}
+.form-nombre,
+.form-apellido,
+.form-documento,
+.form-domicilio,
+.form-comentarios
+{
+    padding-inline: 25px;
+    grid-column: span 4;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.form-nombre input,
+.form-apellido input,
+.form-documento input,
+.form-telefono input,
+.form-domicilio input
+{
+    width: 90%;
+    border-radius: 10px;
+    border: wheat solid 2px;
+}
+.form-sexo,
+.form-estado,
+.form-telefono,
+.form-ocupacion{
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.form-comentarios{
+    grid-row: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 15px;
+}
+
+.form-comentarios textarea{
+    width: 80%;
+    border-radius: 15px;
+    border: wheat solid 2px;
+    color: black;
+    padding: 10px;
+}
+.btn-enviar{
+    grid-column: span 4;
+    display: flex;
+    justify-content: center;
+}
+.btn-enviar button{
+    width: 200px;
+    border-radius: 15px;
+    border: black solid 2px;
+    background-color: black;
+}
+
+.form-documento select,
+.form-sexo select,
+.form-estado select,
+.form-ocupacion select
+{
+    width: 50%;
+    color: black;
+    border-radius: 10px;
+    border: wheat solid 2px;
+    text-align: center;
+}
+
+.form-sexo,
+.form-estado,
+.form-ocupacion,
+.form-telefono
+{
+    padding-left: 20px;
+}
+.form-telefono input{
+    width: 70%;
+}
+
+option, input{
+    padding-inline: 10px;
+    color: black;
+}

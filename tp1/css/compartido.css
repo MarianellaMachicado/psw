@@ -8,7 +8,9 @@
     color: #eee;
 }
 body{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/fondo.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://img.freepik.com/foto-gratis/fondo-tecnologia-moderna-plexo-baja-poli_1048-14278.jpg?w=1060&t=st=1712803680~exp=1712804280~hmac=cbbc6e6fc51ec24b4c1a548843bf1bc1357b1472328d0463fd7a584366fbd0c8');
+    background-size: cover;
+    background-position: center;
 }
 header{
     background-color: black;
@@ -49,6 +51,13 @@ header{
     padding-right: 150px;
     gap: 40px;
 }
+.header-opciones a{
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.header-opciones a:hover{
+    transform: scale(1.2);
+}
 main{    
     width: 100%;
     display: flex;
@@ -66,7 +75,7 @@ main{
     padding: 10px;
 }
 .section-titulo h2{
-    font-size: 3em;
+    font-size: 2.5em;
 }
 .section-titulo h3{
     font-size: 1.5em;
@@ -79,7 +88,6 @@ footer{
 }
 footer section{
     width: 100%;
-    border: #deedf7 solid 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,19 +95,9 @@ footer section{
     gap: 15px;
 }
 footer section h3,footer section ul{
-    border: red solid 2px;
     width: 70%;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: start;
-}
-
-
-
-
-/*Guias*/
-section{
-    border: lightgreen solid 2px;
-    border-radius: 7px;
 }
