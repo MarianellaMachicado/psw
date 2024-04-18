@@ -1,0 +1,22 @@
+/*Colores personalizados para el Punto 1*/
+.bg-custom-menu-md{
+    background-color: #bfbfbf;
+}
+.bg-custom-menu-sm{
+    background-color: #ffd966;
+}
+.bg-custom-menu-xs{
+    background-color: #00b0f0;
+}
+.bg-custom-img{
+    background-color: #8eaadb;
+}
+.bg-custom-art{
+    background-color: #7030a0;
+}
+.bg-custom-footer{
+    background-color: #a8d08d;
+}
+section div{
+    border: white solid 1px;
+}
