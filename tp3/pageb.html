@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="css/compartido.css">
     <link rel="icon" href="img/bootstrap.png" type="image/x-icon">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <style>
+        .titulo-principal{ background-color: #5c9ccc;}
+        .titulo-secundario{ background-color: #02406c;}
+        .fondo-secundario{ background:  linear-gradient(to bottom, #2d6085, #02406c);;}
+    </style>
 </head>
 <body>
     <header>
@@ -32,8 +38,140 @@
             </div>
           </nav>
     </header>
-    <main class="container-fluid text-center" >
-       
+    <main class="container-fluid" >
+        <section class="row">
+            <div class="col col-md-8 p-0 text-center">
+                <h3 class="titulo-principal text-white p-2">Conversor de divisas</h3>
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">
+                            <img src="img/usd.png" alt="dolares eeuu" width="45px"><br>
+                            <span>USD</span>
+                        </th>
+                        <th scope="col">
+                            <img src="img/eur.png" alt="moneda europea" width="45px"><br>
+                            <span>EUR</span>
+                        </th>
+                        <th scope="col">
+                            <img src="img/gbp.png" alt="libra gran bretaña" width="45px"><br>
+                            <span>GBP</span>
+                        </th>
+                        <th scope="col">
+                            <img src="img/jpy.png" alt="yen japones" width="45px"><br>
+                            <span>JPY</span>
+                        </th>
+                        <th scope="col">
+                            <img src="img/cny.png" alt="yuan chino" width="45px"><br>
+                            <span>CNY</span>
+                        </th>
+                        <th scope="col">
+                            <img src="img/aud.png" alt="dolar australiano" width="45px"><br>
+                            <span>AUD</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" rowspan="2"><img src="img/usd.png" alt="dolares eeuu" width="45px"></th>
+                        <th rowspan="2">1 USD <br> Inverse</th>
+                        <td>1.000000</td>
+                        <td>0.919901</td>
+                        <td>0.811469</td>
+                        <td>108.9097</td>
+                        <td>7.057569</td>
+                        <td>1.619886</td>
+                      </tr>
+                      <tr>
+                        <td>1.000000</td>
+                        <td>1.087074</td>
+                        <td>1.232332</td>
+                        <td>0.009182</td>
+                        <td>0.141692</td>
+                        <td>0.617328</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" rowspan="2"><img src="img/eur.png" alt="moneda europea" width="45px"></th>
+                        <td rowspan="2">1 EUR <br> Inverse</td>
+                        <td>1.087074</td>
+                        <td>1.000000</td>
+                        <td>0.882127</td>
+                        <td>118.3910</td>
+                        <td>7.672100</td>
+                        <td>1.760936</td>
+                      </tr>
+                      <tr>
+                        <td>0.919901</td>
+                        <td>1.000000</td>
+                        <td>1.133623</td>
+                        <td>0.008447</td>
+                        <td>0.130342</td>
+                        <td>0.567880</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" rowspan="2"><img src="img/gbp.png" alt="libra gran bretaña" width="45px"></th>
+                        <td rowspan="2">1 GBP <br> Inverse</td>
+                        <td>1.232332</td>
+                        <td>1.133623</td>
+                        <td>1.000000</td>
+                        <td>134.2108</td>
+                        <td>8.697272</td>
+                        <td>1.996238</td>
+                      </tr>
+                      <tr>
+                        <td>0.811469</td>
+                        <td>0.882127</td>
+                        <td>1.000000</td>
+                        <td>0.007451</td>
+                        <td>0.114979</td>
+                        <td>0.500942</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col col-md-4 d-none d-md-block text-white">
+                <h5 class="titulo-secundario text-center p-2">Conversor de Divisas</h5>
+                <form class="row gy-3 p-2 pt-0 m-0 fondo-secundario">
+                    <div class="col-12">
+                        <label for="cantidad" class="form-label">Cantidad</label>
+                        <input type="number" class="form-control" id="cantidad" placeholder="cantidad">
+                    </div>
+                    <div class="col-12">
+                        <label for="de" class="form-label">De</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>USD - Dólares EEUU</option>
+                            <option value="1">EUR - Moneda Europea</option>
+                            <option value="2">GBP - Libra de Gran Bretaña</option>
+                            <option value="3">JPY - Yen Japonés</option>
+                            <option value="4">CNY - Yuan Chino</option>
+                            <option value="5">AUD - Dólar Australiano</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label for="a" class="form-label">A</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>USD - Dólares EEUU</option>
+                            <option value="1">EUR - Moneda Europea</option>
+                            <option value="2">GBP - Libra de Gran Bretaña</option>
+                            <option value="3">JPY - Yen Japonés</option>
+                            <option value="4">CNY - Yuan Chino</option>
+                            <option value="5">AUD - Dólar Australiano</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <input type="number" class="form-control" id="resultado" disabled>
+                    </div>
+                    <button class="btn btn-warning" type="button">
+                        <div class="d-flex justify-content-between">
+                            <span>Convertir</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+                    </button>
+               </form>
+            </div>
+        </section>
     </main>
     <footer class="container-fluid bg-dark py-3">
         <div class="row text-white text-center gy-2">
