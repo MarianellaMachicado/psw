@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horoscopo</title>
-    <link rel="stylesheet" href="css/compartido.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="icon" href="img/bootstrap.png" type="image/x-icon">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .border-signos{
+            border: black solid 1px;
+            border-radius: 5px;
+        }
+        .texto-signos{
+            background: #6b911b;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,7 +27,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-sm-0 text-center">
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="page1.html">Punto 1</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Punto 2</a>
@@ -32,8 +41,153 @@
             </div>
           </nav>
     </header>
-    <main class="container-fluid text-center" >
-       
+    <main class="container text-center" >
+        <section>
+            <h1>Horoscopo</h1>
+        </section>
+       <section class="row row-cols-2 row-cols-sm-2 row-cols-md-3 gy-2  py-3 text-white">
+            <div class="col p-2 border-signos">
+                    <div class="d-flex justify-content-center align-items-center justify-content-around">
+                        <div>
+                            <img src="img/aries.png" alt="aries" class="img-fluid" width="50px">
+                        </div>
+                        <div class="px-5 texto-signos">Aries</div>
+                    </div>
+            </div>
+            <div class="col p-2 border-signos">
+                    <div class="d-flex justify-content-center align-items-center justify-content-around">
+                        <div>
+                            <img src="img/leo.png" alt="leo" class="img-fluid" width="50px">
+                        </div>
+                        <div class="px-5 texto-signos">Leo</div>
+                    </div>
+            </div>
+            <div class="col p-2 border-signos">
+                    <div class="d-flex justify-content-center align-items-center justify-content-around">
+                        <div>
+                            <img src="img/sagitario.png" alt="sagitario" class="img-fluid" width="50px">
+                        </div>
+                        <div class="px-5 texto-signos">Sagitario</div>
+                    </div>
+            </div>
+            <div class="col p-2 border-signos">
+                    <div class="d-flex justify-content-center align-items-center justify-content-around">
+                        <div>
+                            <img src="img/tauro.png" alt="tauro" class="img-fluid" width="50px">
+                        </div>
+                        <div class="px-5 texto-signos">Tauro</div>
+                    </div>
+            </div>
+            <div class="col p-2 border-signos">
+                    <div class="d-flex justify-content-center align-items-center justify-content-around">
+                        <div>
+                            <img src="img/virgo.png" alt="virgo" class="img-fluid" width="50px">
+                        </div>
+                        <div class="px-5 texto-signos">Virgo</div>
+                    </div>
+            </div>
+            <div class="col p-2 border-signos">
+                    <div class="d-flex justify-content-center align-items-center justify-content-around">
+                        <div>
+                            <img src="img/capricornio.png" alt="capricornio" class="img-fluid" width="50px">
+                        </div>
+                        <div class="px-5 texto-signos">Capricornio</div>
+                    </div>
+            </div>
+            <div class="col p-2 border-signos">
+                    <div class="d-flex justify-content-center align-items-center justify-content-around">
+                        <div>
+                            <img src="img/geminis.png" alt="geminis" class="img-fluid" width="50px">
+                        </div>
+                        <div class="px-5 texto-signos">Geminis</div>
+                    </div>
+            </div>
+            <div class="col p-2 border-signos">
+                    <div class="d-flex justify-content-center align-items-center justify-content-around">
+                        <div>
+                            <img src="img/libra.png" alt="libra" class="img-fluid" width="50px">
+                        </div>
+                        <div class="px-5 texto-signos">Libra</div>
+                    </div>
+            </div>
+            <div class="col p-2 border-signos">
+                    <div class="d-flex justify-content-center align-items-center justify-content-around">
+                        <div>
+                            <img src="img/acuario.png" alt="acuario" class="img-fluid" width="50px">
+                        </div>
+                        <div class="px-5 texto-signos">Acuario</div>
+                    </div>
+            </div>
+            <div class="col p-2 border-signos">
+                    <div class="d-flex justify-content-center align-items-center justify-content-around">
+                        <div>
+                            <img src="img/cancer.png" alt="cancer" class="img-fluid" width="50px">
+                        </div>
+                        <div class="px-5 texto-signos">Cancer</div>
+                    </div>
+            </div>
+            <div class="col p-2 border-signos">
+                    <div class="d-flex justify-content-center align-items-center justify-content-around">
+                        <div>
+                            <img src="img/escorpio.png" alt="escorpio" class="img-fluid" width="50px">
+                        </div>
+                        <div class="px-5 texto-signos">Escorpio</div>
+                    </div>
+            </div>
+            <div class="col p-2 border-signos">
+                    <div class="d-flex justify-content-center align-items-center justify-content-around">
+                        <div>
+                            <img src="img/piscis.png" alt="piscis" class="img-fluid" width="50px">
+                        </div>
+                        <div class="px-5 texto-signos">Piscis</div>
+                    </div>
+            </div>
+       </section>
+       <section class="row">
+            <article class="col-12 p-0 pt-3 ">
+                <table class="table text-center table-bordered border-black">         
+                    <thead class="table-dark">
+                        <tr>
+                            <th colspan="2">Libra - Dia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr >
+                        <td><div class="px-5 text-white texto-signos">Aries</div></td>
+                        <td rowspan="2">
+                            <img src="img/aries.png" alt="aries" width="50px">
+                        </td>
+                    </tr>
+                    <tr >
+                        <td>La iniciativa es el punto fuerte de la personalidad de Aries. Son los que siempre van un paso por delante, animan al resto a hacer lo mismo y de los signos en los que más puedes confiar. Eso sí, sacarán lo peor de ellos —impulsividad, impaciencia y egoísmo —si no estás a la altura de su energía. No son fáciles de llevar.</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </article>
+            <article class="col-12 p-0 pt-3">
+                <table class="table text-center table-bordered border-black ">
+                    <thead class="table-dark">
+                        <tr>
+                            <th colspan="2">Libra - Mes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr >
+                            <td><div class="px-5 text-white texto-signos">Aries</div></td>
+                            <td rowspan="2">
+                                <img src="img/aries.png" alt="aries" width="50px">
+                            </td>
+                        </tr>
+                        <tr >
+                            <td class="card-text">Aries forma parte de los signos cardinales y al mismo tiempo es un signo de fuego; también es el primer signo del zodíaco, precisamente por eso, simboliza el inicio, la creación. Se caracteriza por ser una persona rebosante de energía y entusiasmo; avanzada y aventurera, adora la libertad, los retos y las nuevas ideas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </article>
+       </section>
     </main>
     <footer class="container-fluid bg-dark py-3">
         <div class="row text-white text-center gy-2">
