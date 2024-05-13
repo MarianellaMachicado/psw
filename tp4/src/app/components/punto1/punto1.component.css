@@ -1,0 +1,11 @@
+.btn-carrito{
+    position: fixed;
+    z-index: 10;
+    right: 5px;
+    top: 3px;
+    border-radius: 20px;
+}
+
+.bg-opacidad{
+    opacity: 0.8;
+}
