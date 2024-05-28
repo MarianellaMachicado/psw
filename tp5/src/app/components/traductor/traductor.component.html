@@ -1,0 +1,83 @@
+<div class="row mt-5 mb-3">
+    <div class="col">
+    <button class="btn bg-btn-bandera w-100" [class.bg-info]="botonSourceActivo === 'it'" (click)="sourceButton('it')">
+        <img width="48" height="48" src="https://img.icons8.com/color/48/italy-circular.png" alt="italy-circular"/> 
+        Italiano
+    </button>
+    </div>
+    <div class="col">
+    <button class="btn bg-btn-bandera w-100" [class.bg-info]="botonSourceActivo === 'fr'" (click)="sourceButton('fr')">
+        <img width="48" height="48" src="https://img.icons8.com/color/48/france-circular.png" alt="france-circular"/>
+        Francés
+    </button>
+    </div>
+    <div class="col">
+    <button class="btn bg-btn-bandera w-100" [class.bg-info]="botonSourceActivo === 'en'" (click)="sourceButton('en')">
+        <img width="48" height="48" src="https://img.icons8.com/color/48/great-britain-circular.png" alt="great-britain-circular"/>
+        Inglés
+    </button>
+    </div>
+    <div class="col">
+    <button class="btn bg-btn-bandera w-100" [class.bg-info]="botonSourceActivo === 'es'" (click)="sourceButton('es')">
+        <img width="48" height="48" src="https://img.icons8.com/color/48/spain2-circular.png" alt="spain2-circular"/>
+        Español
+    </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+    <textarea class="form-control" rows="5" name="texto" [(ngModel)]="texto"></textarea>
+    </div>
+</div>
+
+<div class="row mt-5 mb-3">
+    <div class="col">
+    <button class="btn bg-btn-bandera w-100" [class.bg-info]="botonTargetActivo === 'it'" (click)="targetButton('it')">
+        <img width="48" height="48" src="https://img.icons8.com/color/48/italy-circular.png" alt="italy-circular"/> 
+        Italiano
+    </button>
+    </div>
+    <div class="col">
+    <button class="btn bg-btn-bandera w-100" [class.bg-info]="botonTargetActivo === 'fr'" (click)="targetButton('fr')">
+        <img width="48" height="48" src="https://img.icons8.com/color/48/france-circular.png" alt="france-circular"/>
+        Francés
+    </button>
+    </div>
+    <div class="col">
+    <button class="btn bg-btn-bandera w-100" [class.bg-info]="botonTargetActivo === 'en'" (click)="targetButton('en')">
+        <img width="48" height="48" src="https://img.icons8.com/color/48/great-britain-circular.png" alt="great-britain-circular"/>
+        Inglés
+    </button>
+    </div>
+    <div class="col">
+    <button class="btn bg-btn-bandera w-100" [class.bg-info]="botonTargetActivo === 'es'" (click)="targetButton('es')">
+        <img width="48" height="48" src="https://img.icons8.com/color/48/spain2-circular.png" alt="spain2-circular"/>
+        Español
+    </button>
+    </div>
+</div>
+<div class="row mt-3 mb-5">
+    <div class="col-12">
+    <button class="btn btn-primary btn-block w-100 p-2" type="button" id="traducir" (click)="traducirTexto()">Traducir</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+    <textarea class="form-control" rows="5">{{textoTraducido}}</textarea>
+    </div>
+</div>
+
+
+
+<!--button type="button" id="traducir" (click)="obtenerLenguajes()">Obtener Lenguajes</button>
+<form>
+    <label for="texto">Texto a Traducir:</label>
+    <input type="text" id="texto" name="texto" value="" [(ngModel)]="texto">
+    <label for="source">Source:</label>
+    <input type="text" id="source" name="source" value="" [(ngModel)]="source">
+    <label for="target">Target:</label>
+    <input type="text" id="target" name="target" value="" [(ngModel)]="target">
+    <button type="button" id="traducir" (click)="traducirTexto()">Traducir</button>
+    Resultado: {{textoTraducido}}
+</form-->

@@ -25,52 +25,52 @@
             </div>
         </div>
     </div>
-    <!-- Productos en el carrito -->
-    <div class="modal fade" id="carrito">
-        <div class="modal-dialog">
-        <div class="modal-content">
-    
-            <!-- Modal Header -->
-            <div class="modal-header">
-            <h4 class="modal-title"><i class="bi bi-cart-fill"> Carrito</i></h4>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<!-- Productos en el carrito -->
+<div class="modal fade" id="carrito">
+    <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+        <h4 class="modal-title"><i class="bi bi-cart-fill"> Carrito</i></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body" >
+            <div *ngIf="carrito.length === 0">
+                <p>Carrito vacio</p>
             </div>
-    
-            <!-- Modal body -->
-            <div class="modal-body" >
-                <div *ngIf="carrito.length === 0">
-                    <p>Carrito vacio</p>
-                </div>
-                <div class="card mb-3 h-25" style="max-width: 540px;" *ngFor="let productoCarrito of carrito">
-                    <div class="row g-0">
-                      <div class="col-6 col-md-4">
-                        <img [src]="productoCarrito.img" class="img-fluid rounded-start" alt="{{productoCarrito.nombre}}" >
-                      </div>
-                      <div class="col-6 col-md-8">
-                        <div class="card-body">
-                          <div class="row">
-                            <h5 class="card-title col-12">{{productoCarrito.nombre}}</h5>
-                            <p class="card-text col-12 col-md-6"><small class="text-body-secondary"> <Strong>Cantidad: </Strong>{{productoCarrito.cantidad}}</small></p>
-                            <h6 class="col-12 col-md-6">{{productoCarrito.precio * productoCarrito.cantidad| currency:'$ ':'symbol':'.0-0' }}</h6>
-                            <button type="button" class="btn btn-warning btn-sm px-5 col-5 m-1" (click)="agregarProductoCarrito(productoCarrito)">
-                                <i class="bi bi-cart-plus-fill"></i>
-                            </button>
-                            <button type="button" class="btn btn-danger btn-sm px-5 col-5 m-1" (click)="quitarProductoCarrito(productoCarrito)">
-                                <i class="bi bi-cart-x-fill"></i>
-                            </button>
-                          </div>
-                        </div>
+            <div class="card mb-3 h-25" style="max-width: 540px;" *ngFor="let productoCarrito of carrito">
+                <div class="row g-0">
+                  <div class="col-6 col-md-4">
+                    <img [src]="productoCarrito.img" class="img-fluid rounded-start" alt="{{productoCarrito.nombre}}" >
+                  </div>
+                  <div class="col-6 col-md-8">
+                    <div class="card-body">
+                      <div class="row">
+                        <h5 class="card-title col-12">{{productoCarrito.nombre}}</h5>
+                        <p class="card-text col-12 col-md-6"><small class="text-body-secondary"> <Strong>Cantidad: </Strong>{{productoCarrito.cantidad}}</small></p>
+                        <h6 class="col-12 col-md-6">{{productoCarrito.precio * productoCarrito.cantidad| currency:'$ ':'symbol':'.0-0' }}</h6>
+                        <button type="button" class="btn btn-warning btn-sm px-5 col-5 m-1" (click)="agregarProductoCarrito(productoCarrito)">
+                            <i class="bi bi-cart-plus-fill"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm px-5 col-5 m-1" (click)="quitarProductoCarrito(productoCarrito)">
+                            <i class="bi bi-cart-x-fill"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
-            </div>
+                </div>
+              </div>
+        </div>
 
-             <!-- Modal footer -->
-            <div class="modal-footer d-flex align-items-center ">
-                <p> <strong>Total: </strong> {{calcularTotal() | currency:'$ ':'symbol':'.0-0' }}</p>
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Pagar</button>
-            </div>
+         <!-- Modal footer -->
+        <div class="modal-footer d-flex align-items-center ">
+            <p> <strong>Total: </strong> {{calcularTotal() | currency:'$ ':'symbol':'.0-0' }}</p>
+            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Pagar</button>
         </div>
-        </div>
+    </div>
     </div>
 </div>
