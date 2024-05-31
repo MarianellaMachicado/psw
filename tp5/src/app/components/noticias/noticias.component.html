@@ -1,0 +1,19 @@
+<section class="row">
+    <div class="col col-sm-9 ">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-4 p-4">
+            <div class="col" *ngFor="let noticia of noticias">
+                <div class="card h-100">
+                    <img [src]="noticia.img" class="card-img-top" alt="Portada de Olivia Rodrigo" >
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate">{{noticia.titulo}}</h5>
+                        <p class="card-text">{{noticia.descripcion}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Lanzado el 22/03/2024</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <aside class="col-3 d-none d-sm-block my-4 background-container-y"></aside>
+</section>     

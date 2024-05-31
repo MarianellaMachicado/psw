@@ -1,0 +1,6 @@
+.background-container-y{
+    background-image: url('/assets/img/publicidad-vertical.jpg');
+    background-repeat: repeat-y;
+    background-size: contain;
+    border-radius: 5px;
+}
