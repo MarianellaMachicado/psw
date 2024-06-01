@@ -1,0 +1,62 @@
+<button type="button" class="btn btn-dark btn-lg my-3 " (click)="obtenerAutores()">
+    <i class="bi bi-book"> Mostrar Autores</i>
+</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id Autor</th>
+            <th scope="col">Nombre del Autor</th>
+            <th scope="col">Foto del Autor</th>
+            <th>Más Info</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of autores">
+            <th scope="row" >{{a.id}}</th>
+            <td>{{a.nombre}}</td>
+            <td><img [src]="a.foto" alt=""></td>
+            <td>
+                <button type="button" class="btn btn-success btn-lg btn-carrito" data-bs-toggle="modal" data-bs-target="#autor" (click)="masInfoAutorPorId(a.id)">
+                    <i class="bi bi-book"> {{a.nombre}}</i>
+                </button>
+            </td>
+      </tr>
+    </tbody>
+  </table>
+<!--Autor-->
+<div class="modal fade" id="autor">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Mas info del Autor</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row row-cols-2">
+                    <div class="col-3">
+                        <img [src]="autorMasInfo.foto" class="img-fluid w-100" alt="" >
+                    </div>
+                    <div class="col-9">
+                        <h2 class="text-center">{{autorMasInfo.nombre}}</h2>
+                        <hr>
+                        <h3 id="bibliografia">Bibliografía</h3>
+                        <p>{{autorMasInfo.bibliografia !== '' ? autorMasInfo.bibliografia : 'Sin Bibliografía'}}</p>
+                    </div>
+                </div>
+                <hr>
+                <h3 id="libros">Libros</h3>
+                <ul>
+                    <li class="list-unstyled" *ngFor="let libro of autorMasInfo.libros">
+                        <i class="bi bi-book"> {{libro}}</i>
+                    </li>
+                </ul>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer d-flex align-items-center ">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
