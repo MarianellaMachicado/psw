@@ -1,1 +1,41 @@
-<p>autos works!</p>
+<button type="button" class="btn btn-dark btn-lg my-3 " *ngIf="mostrarBoton" (click)="obtenerMarcas()">
+    <i class="bi bi-book"> Mostrar Marcas</i>
+</button>
+<section class="row">
+    <div class="col col-sm-9 ">
+        <h1 class="text-center my-4" *ngIf="!mostrarBoton">Marcas de carros de lujo</h1>
+        <ul class="row row-cols-2 g-4 p-4">
+            <li class="col list-group" *ngFor="let marca of autos">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-secondary text-center" (click)="obtenerModelos(marca.id,marca.nombre)" data-bs-toggle="modal" data-bs-target="#marca">
+                    {{marca.nombre}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <aside class="col-3 d-none d-sm-block my-4 background-container-y"></aside>
+</section>
+<!--Autor-->
+<div class="modal fade" id="marca">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">{{auto.nombre}}</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <h3 id="libros">Modelos</h3>
+                <ul>
+                    <li class="list-unstyled" *ngFor="let modelo of auto.modelos">
+                        <i class="bi bi-car-front-fill"> {{modelo}}</i>
+                    </li>
+                </ul>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer d-flex align-items-center ">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

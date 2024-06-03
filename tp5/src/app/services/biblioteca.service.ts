@@ -13,7 +13,7 @@ export class BibliotecaService {
     const httpOptions = { 
       headers: new HttpHeaders({ 
         'X-RapidAPI-Host': 'hapi-books.p.rapidapi.com', 
-        'X-RapidAPI-Key': 'fa2a339ecemsha9c3778d5f20bbfp1337c9jsn2daab9436e3e'}),
+        'X-RapidAPI-Key': '56df3ddd99msh6b20be86e45ebb1p12eef5jsn36f88fd49161'}),
     } 
     return this._http.get("https://hapi-books.p.rapidapi.com/top_authors", httpOptions); 
   }
@@ -21,7 +21,7 @@ export class BibliotecaService {
     const httpOptions = {
       headers: new HttpHeaders({
         'X-RapidAPI-Host': 'hapi-books.p.rapidapi.com',
-        'X-RapidAPI-Key': 'fa2a339ecemsha9c3778d5f20bbfp1337c9jsn2daab9436e3e',
+        'X-RapidAPI-Key': '56df3ddd99msh6b20be86e45ebb1p12eef5jsn36f88fd49161',
       })
     };
     return this._http.get(

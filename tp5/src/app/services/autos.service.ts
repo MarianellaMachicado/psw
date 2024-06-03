@@ -13,7 +13,7 @@ export class AutosService {
     const httpOptions = { 
       headers: new HttpHeaders({ 
         'X-RapidAPI-Host': 'car-specs.p.rapidapi.com', 
-        'X-RapidAPI-Key': 'fa2a339ecemsha9c3778d5f20bbfp1337c9jsn2daab9436e3e'}),
+        'X-RapidAPI-Key': '56df3ddd99msh6b20be86e45ebb1p12eef5jsn36f88fd49161'}),
     } 
     return this._http.get("https://car-specs.p.rapidapi.com/v2/cars/makes", httpOptions); 
   } 
@@ -22,8 +22,8 @@ export class AutosService {
       headers: new HttpHeaders({ 
         'Content-Type': 'application/json',
         'X-RapidAPI-Host': 'car-specs.p.rapidapi.com', 
-        'X-RapidAPI-Key': 'fa2a339ecemsha9c3778d5f20bbfp1337c9jsn2daab9436e3e'}),
+        'X-RapidAPI-Key': '56df3ddd99msh6b20be86e45ebb1p12eef5jsn36f88fd49161'}),
     } 
-    return this._http.get(`https://car-specs.p.rapidapi.com/v2/cars/makes/$(id)/model`, httpOptions); 
+    return this._http.get(`https://car-specs.p.rapidapi.com/v2/cars/makes/${id}/models`, httpOptions); 
   }
 }

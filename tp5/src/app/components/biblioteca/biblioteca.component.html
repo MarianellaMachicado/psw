@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-dark btn-lg my-3 " (click)="obtenerAutores()">
+<button type="button" class="btn btn-dark btn-lg my-3" *ngIf="mostrarBoton" (click)="obtenerAutores()">
     <i class="bi bi-book"> Mostrar Autores</i>
 </button>
 <table class="table">
@@ -16,7 +16,7 @@
             <td>{{a.nombre}}</td>
             <td><img [src]="a.foto" alt=""></td>
             <td>
-                <button type="button" class="btn btn-success btn-lg btn-carrito" data-bs-toggle="modal" data-bs-target="#autor" (click)="masInfoAutorPorId(a.id)">
+                <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#autor" (click)="masInfoAutorPorId(a.id)">
                     <i class="bi bi-book"> {{a.nombre}}</i>
                 </button>
             </td>

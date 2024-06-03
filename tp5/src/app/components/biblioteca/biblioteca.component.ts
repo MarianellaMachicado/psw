@@ -14,6 +14,7 @@ export class BibliotecaComponent {
   autor!: Autor;
   autores: Autor[] = [];
   autorMasInfo: Autor = new Autor("","","","",[]);
+  mostrarBoton: boolean = true;
 
   constructor(private bibliotecaService: BibliotecaService){}
   
@@ -30,6 +31,7 @@ export class BibliotecaComponent {
           );
           this.autores.push(this.autor);
         }
+        this.mostrarBoton = false;
         console.log(this.autores);
       },
       (error: any) => {

@@ -5,22 +5,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-sm-0 text-center">
-                <li class="nav-item cols-2">
-                    <a class="nav-link" [routerLink]="['traductor']">
-                        <i class="bi bi-translate"></i>
-                        Traductor
-                    </a>
-                </li>
-                <li class="nav-item cols-2">
-                    <a class="nav-link" [routerLink]="['noticias']">
-                        <i class="bi bi-newspaper"></i>
-                        Noticias
-                    </a>
-                </li>
-                <li class="nav-item cols-2">
-                    <a class="nav-link" [routerLink]="['biblioteca']">
-                        <i class="bi bi-book"></i>
-                        Biblioteca
+                <li class="nav-item mx-2" *ngFor="let item of rutas">
+                    <a class="nav-link" [routerLink]="[item.titulo]">
+                        <i class="bi bi-{{item.icono}}"></i>
+                        {{item.titulo|titlecase}}
                     </a>
                 </li>
             </ul>

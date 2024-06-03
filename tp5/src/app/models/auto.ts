@@ -1,12 +1,12 @@
 export class Auto {
     id: String = "";
     nombre: String = "";
-    modelo: String = "";
+    modelos?: String[] = [];
 
-    constructor(id: String,nombre: String,modelo: String) {
+    constructor(id: String,nombre: String,modelos?: String[]) {
         this.id = id;
         this.nombre = nombre;
-        this.modelo = modelo;
+        this.modelos = modelos;
     }
     
 }

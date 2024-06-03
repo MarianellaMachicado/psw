@@ -13,7 +13,7 @@ export class NoticiasService {
     const httpOptions = { 
       headers: new HttpHeaders({ 
         'X-RapidAPI-Host': 'livescore6.p.rapidapi.com', 
-        'X-RapidAPI-Key': 'fa2a339ecemsha9c3778d5f20bbfp1337c9jsn2daab9436e3e'}),
+        'X-RapidAPI-Key': '56df3ddd99msh6b20be86e45ebb1p12eef5jsn36f88fd49161'}),
     } 
     return this._http.get("https://livescore6.p.rapidapi.com/news/v2/list-by-sport?category=2021020913321150030&page=1", httpOptions); } 
 }

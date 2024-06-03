@@ -14,11 +14,10 @@ import { Noticia } from '../../models/noticia';
 export class NoticiasComponent {
   noticia!: Noticia;
   noticias: Noticia[]=[];
+  mostrarBoton: boolean = true;
 
   constructor(private noticiasService:NoticiasService){}
-  ngOnInit(): void {
-   this.obtenerNoticias();
-  }
+  
   obtenerNoticias(): void {
     this.noticiasService.getNews().subscribe(
       (resultado: any) => {
@@ -33,6 +32,7 @@ export class NoticiasComponent {
           );
           this.noticias.push(this.noticia);
         }
+        this.mostrarBoton = false;
         console.log(this.noticias);
       },
       (error: any) => {
