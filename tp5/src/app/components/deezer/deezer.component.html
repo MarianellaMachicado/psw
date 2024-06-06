@@ -1,1 +1,23 @@
-<p>deezer works!</p>
+<div class="bg-black bg-opacidad rounded mt-4">
+    <div class="input-group p-4">
+        <input id="buscar" type="text" class="form-control" placeholder="Buscar" name="buscar" [(ngModel)]="buscar">
+        <button class="btn btn-secondary" type="button" id="buscar" (click)="obtenerBusqueda()"><i class="bi bi-search"></i></button>
+    </div>
+</div>
+<div class="bg-black bg-opacidad rounded my-3 py-2"  *ngIf="mostrarElemento">
+    <h2 class="text-center text-white">Resultados de  la Busqueda</h2>
+    <div class="card mb-3 mx-4 w-70" *ngFor="let cancion of canciones">
+        <div class="row g-0">
+            <div class="col-md-4 d-none d-md-block">
+                <img [src]="cancion.img" class="img-fluid rounded-start" alt="{{cancion.titulo}}">
+            </div>
+            <div class="col-md-8 ">
+                <div class="card-body">
+                    <h5 class="card-title">{{cancion.titulo}}</h5>
+                    <p class="card-text"><small class="text-body-secondary">{{cancion.artista}}</small></p>
+                    <audio controls [src]="cancion.musica" type="audio/mpeg"></audio>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

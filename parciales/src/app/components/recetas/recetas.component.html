@@ -1,0 +1,83 @@
+<button type="button" class="btn btn-dark btn-lg my-3" *ngIf="mostrarBoton" (click)="obtenerRecetas()">
+    <i class="bi bi-book"> Mostrar Recetas</i>
+</button>
+
+<div class="bg-black bg-opacidad rounded my-3 p-4">
+    <h2 class="text-center text-white mb-2">Recetas</h2>
+    <div class="d-flex align-items-center text-white" *ngIf="cargando && !modal">
+        <strong role="status">Cargando...</strong>
+        <div class="spinner-border ms-auto" aria-hidden="true"></div>
+    </div>
+    <div class="m-2" *ngIf="!mostrarBoton">
+        <table class="table table-hover" >
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Path</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Imagen</th>
+                    <th>Más Info</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let receta of recetas">
+                    <th scope="row" >{{receta.path}}</th>
+                    <td>{{receta.titulo}}</td>
+                    <td><img [src]="receta.imagen" alt=""></td>
+                    <td>
+                        <a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="#"  data-bs-toggle="modal" data-bs-target="#autor" (click)="obtenerRecetaDetalles(receta.path,receta.categoria)">
+                            <i class="bi bi-info-circle">Ver receta</i>
+                        </a>
+                    </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+<!--MODAL-->
+<div class="modal fade" id="autor">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    {{cargando ? 'Cargando...' : recetaDetalle.categoria}}
+                </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="d-flex justify-content-center" *ngIf="cargando && modal">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Cargando...</span>
+                </div>
+            </div>
+            <div class="modal-body" *ngIf="!cargando">
+                <div class="row row-cols-2">
+                    <div class="col-3">
+                        <img [src]="recetaDetalle.imagen" class="img-fluid w-100" alt="" >
+                    </div>
+                    <div class="col-9">
+                        <h2 class="text-center">{{recetaDetalle.titulo}}</h2>
+                    </div>
+                </div>
+                <hr>
+                <h3 id="bibliografia">Ingredientes</h3>
+                <ul>
+                    <li class="list-unstyled" *ngFor="let ingrediente of recetaDetalle.ingredientes">
+                        <i class="bi bi-check2-square"> - {{ingrediente}}</i>
+                    </li>
+                </ul>
+                <hr>
+                <h3 id="libros">Pasos</h3>
+                <div *ngFor="let paso of recetaDetalle.pasos">
+                    <p>
+                        <i class="bi bi-caret-right-fill">{{paso}}</i>
+                    </p>
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer d-flex align-items-center ">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
