@@ -14,7 +14,8 @@ export class HeaderComponent {
   
   constructor() {
     this.rutas = [
-      {titulo:"recetas",icono:"journal-bookmark"}
+      {titulo:"recetas",icono:"journal-bookmark"},
+      {titulo:"youtube",icono:"collection-play-fill"}
     ];
   }
 }
