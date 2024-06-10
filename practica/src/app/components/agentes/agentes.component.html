@@ -1,0 +1,27 @@
+<div class="bg-black bg-opacidad rounded my-3 p-4">
+    <h2 class="text-center text-white mb-2">Agentes</h2>
+    <div class="m-2 mt-4" *ngIf="!mostrarBoton">
+        <table class="table table-hover" >
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Legajo</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let agente of agentes">
+                    <th scope="row" >{{agente.legajo}}</th>
+                    <td>{{agente.apellido}}</td>
+                    <td>{{agente.nombre}}</td>
+                    <td>{{agente.nro_documento}}</td>
+                    <td>
+                        {{agente.estado ? 'Habilitado' : 'Deshabilitado'}}
+                    </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="bg-black bg-opacidad rounded my-4 pb-2">
+    <div class="input-group w-50 mx-auto p-4">
+        <input id="generar" type="text" class="form-control" placeholder="Url" name="buscar" [(ngModel)]="texto">
+        <button class="btn btn-secondary" type="button" id="generar" (click)="obtenerQr()"><i class="bi bi-qr-code"></i></button>
+    </div>
+    <div class="d-flex align-items-center text-white" *ngIf="cargando">
+        <strong role="status">Generando Qr...</strong>
+        <div class="spinner-border ms-auto" aria-hidden="true"></div>
+    </div>
+    <h2 class="text-center text-white " *ngIf="mostrar">Qr Generado</h2>
+    <div class="card w-50 mx-auto mb-3 mx-4" *ngIf="mostrar">
+        <div class="row g-0">
+            <div class="col-12">
+                <img [src]="imagen" class="img-fluid w-100" alt="Qr generado de: {{texto}}">
+            </div>
+        </div>
+    </div>
+</div>

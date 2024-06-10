@@ -1,0 +1,113 @@
+<!--Mostrar elementos en Tabla-->
+<div class="bg-black bg-opacidad rounded my-3 p-4">
+    <h2 class="text-center text-white mb-2">Tabla Empleados</h2>
+    <div class="m-2 mt-4">
+        <table class="table table-hover" >
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Legajo</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Mas Información</th>
+                    <th scope="col">Card</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let a of array">
+                    <th scope="row" >{{a.legajo}}</th>
+                    <td>{{a.apellido}}</td>
+                    <td>{{a.nombre}}</td>
+                    <td>{{a.nro_documento}}</td>
+                    <td>
+                        {{a.estado ? 'Habilitado' : 'Deshabilitado'}}
+                    </td>
+                    <td>
+                        <a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="#"  data-bs-toggle="modal" data-bs-target="#modal" (click)="obtenerEmpleado(a.legajo,false)">
+                            <i class="bi bi-info-circle"></i>  Ver Más Información
+                        </a> 
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success" (click)="obtenerEmpleado(a.legajo,true)">
+                            <i class="bi bi-book"> Mostrar</i>
+                        </button>
+                    </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<!--MODAL-->
+<div class="modal fade" id="modal">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Legajo: {{cargando ? 'Cargando...' : empleado.legajo}}
+                </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="d-flex justify-content-center" *ngIf="cargando && modal">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Cargando...</span>
+                </div>
+            </div>
+            <div class="modal-body" *ngIf="!cargando">
+                <div class="row row-cols-2">
+                    <div class="col-3">
+                        <img [src]="empleado.img" class="img-fluid w-100" alt="" >
+                    </div>
+                    <div class="col-9">
+                        <h2 class="text-center">{{empleado.apellido}}, {{empleado.nombre}}</h2>
+                    </div>
+                </div>
+                <hr>
+                <h3 id="bibliografia">Estado</h3>
+                <ul>
+                    <!--li class="list-unstyled" *ngFor="let ingrediente of recetaDetalle.ingredientes">
+                        <i class="bi bi-check2-square"> - {{ingrediente}}</i>
+                    </li-->
+                </ul>
+                <hr>
+                <h3 id="libros">Pasos</h3>
+                <!--div *ngFor="let paso of recetaDetalle.pasos">
+                    <p>
+                        <i class="bi bi-caret-right-fill">{{paso}}</i>
+                    </p>
+                </div-->
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer d-flex align-items-center ">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Mostrar elementos en Cards-->
+<div class="bg-black bg-opacidad rounded my-3 p-4" *ngIf="mostrarCard">
+    <h2 class="text-center text-white mb-2">Infomación del Empleado</h2>
+    <div class="m-2 mt-4">
+        <div class="card mb-3" >
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img [src]="empleado.img" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{empleado.apellido}}, {{empleado.nombre}}</h5>
+                  <p class="card-text"><small class="text-body-secondary">{{empleado.estado ? 'Habilitado' : 'Deshabilitado'}}</small></p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Legajo: {{empleado.legajo}}</li>
+                    <li class="list-group-item">Dni: {{empleado.nro_documento}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
