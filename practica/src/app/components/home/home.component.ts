@@ -17,6 +17,8 @@ export class HomeComponent {
   empleado!: any;
   mostrarCard!: boolean;
 
+  /*Musica*/
+  mostrarElemento!: boolean;
   constructor(){
     this.iniciarVariables();
   }
@@ -30,13 +32,14 @@ export class HomeComponent {
     this.modal = false;
     this.empleado = {legajo: 0,apellido:"",nombre:"",nro_documento:"",estado:false,img:""};
     this.mostrarCard = false;
+    this.mostrarElemento = false;
   }
 
   obtenerEmpleado(legajo: number,esCard: boolean): void{
     this.empleado = this.array.find(o => o.legajo === legajo);
     if(esCard)
       this.mostrarCard = true;
-    
+    this.mostrarElemento = true;
   }
 
 

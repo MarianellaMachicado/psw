@@ -16,7 +16,11 @@ export class HeaderComponent {
     this.rutas = [
       {titulo:"home",icono:"house-door-fill"},
       {titulo:"generar qr",icono:"qr-code"},
-      {titulo:"agentes",icono:"table"}
+      {titulo:"agentes",icono:"table"},
+      {titulo:"biblioteca",icono:"book"},
+      {titulo:"recetas",icono:"journal-bookmark"},
+      {titulo:"youtube",icono:"collection-play-fill"},
+      {titulo:"estrellas",icono:"moon-stars"}
     ];
   }
 }

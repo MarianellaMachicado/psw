@@ -1,0 +1,60 @@
+<button type="button" class="btn btn-dark btn-lg my-3" *ngIf="mostrarBoton" (click)="obtenerEstrellas()">
+    <i class="bi bi-book"> Mostrar Estrellas</i>
+</button>
+
+<div class="bg-black bg-opacidad rounded my-3 p-4" *ngIf="!mostrarBoton">
+    <h2 class="text-center text-white mb-2">Listado de Estrellas</h2>
+    <div class="m-2 mt-4">
+        <table class="table table-hover" >
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Estrella</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let a of estrellas">
+                    <th scope="row" >{{a.id}}</th>
+                    <td>{{a.nombre}}</td>
+                    <td>
+                        <a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="#"  data-bs-toggle="modal" data-bs-target="#modal" (click)="obtenerEstrella(a.id)">
+                            <i class="bi bi-info-circle"></i>  Ver Más Información
+                        </a> 
+                    </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<!--MODAL-->
+<div class="modal fade" id="modal">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">
+                   {{star.nombre}}
+                </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <h3 id="libros">Planetas</h3>
+                <p *ngIf="vacio">
+                    No tiene planetas que la rodean
+                </p>
+                <div *ngFor="let p of star.planetas" >
+                    <p>
+                        <i class="bi bi-caret-right-fill">{{p}}</i>
+                    </p>
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer d-flex align-items-center ">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

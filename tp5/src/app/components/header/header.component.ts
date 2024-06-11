@@ -17,9 +17,7 @@ export class HeaderComponent {
       {titulo:"traductor",icono:"translate"},
       {titulo:"noticias",icono:"newspaper"},
       {titulo:"autos",icono:"car-front-fill"},
-      {titulo:"musica",icono:"headphones"},
-      {titulo:"biblioteca",icono:"book"},
-      
+      {titulo:"musica",icono:"headphones"}
     ];
   }
 }
