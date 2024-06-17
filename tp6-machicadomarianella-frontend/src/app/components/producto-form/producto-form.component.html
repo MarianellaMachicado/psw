@@ -1,0 +1,41 @@
+<div class="bg-black bg-opacidad text-white rounded my-3 p-4">
+   <div class="mx-5">
+        <h2 class="text-center">Producto</h2>
+        <form>
+            <div class="mb-3">
+                <label for="idnombre" class="form-label">Nombre</label>
+                <input name="nombre" type="text" class="form-control" id="idnombre" [(ngModel)]="producto.nombre">
+            </div>
+            <div class="mb-3">
+                <label for="iddescripcion" class="form-label">Descripcion</label>
+                <textarea name="descripcion" class="form-control" id="iddescripcion" rows="3" [(ngModel)]="producto.descripcion"></textarea>
+            </div>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="idprecio" class="form-label">Precio</label>
+                        <input name="precio" type="number" class="form-control" id="idprecio" [(ngModel)]="producto.precio">
+                    </div>
+                    <div class="col-6">
+                        <label for="idstock" class="form-label">Stock</label>
+                        <input name="stock" type="number" class="form-control" id="idprecio" [(ngModel)]="producto.stock">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Imagen</label>
+                <input class="form-control" type="file" id="formFile" >
+            </div>
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="destacado" name="destacado" [(ngModel)]="producto.destacado">
+                    <label class="form-check-label" for="destacado">Destacado</label>
+                </div>
+            </div>
+            <div class="text-center">
+                <button *ngIf="accion=='new'" type="button" class="btn btn-primary" style="width: 18%;" (click)="crearProducto()">Guardar</button>              
+                <button *ngIf="accion=='update'"type="button" class="btn btn-primary" style="width: 18%;" (click)="modificarProducto()">Actualizar</button>
+            </div>
+        </form>
+   </div>
+</div>

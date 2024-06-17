@@ -14,10 +14,10 @@ export class HeaderComponent {
   
   constructor() {
     this.rutas = [
-      {titulo:"home",icono:"house-door-fill"},
-      {titulo:"productos",icono:"cart3"},
-      {titulo:"transacciones",icono:"cash-coin"},
-      {titulo:"tickets",icono:"ticket-perforated"}
+      {ruta:"",titulo:"home",icono:"house-door-fill"},
+      {ruta:"productos",titulo:"productos",icono:"cart3"},
+      {ruta:"transacciones",titulo:"transacciones",icono:"cash-coin"},
+      {ruta:"tickets",titulo:"tickets",icono:"ticket-perforated"}
     ];
   }
 }

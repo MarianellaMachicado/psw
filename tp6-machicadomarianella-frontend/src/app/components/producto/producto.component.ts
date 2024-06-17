@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ProductoService } from '../../services/producto.service';
 import { CommonModule } from '@angular/common';
 import { Producto } from '../../models/producto';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-producto',
@@ -11,45 +13,51 @@ import { Producto } from '../../models/producto';
   styleUrl: './producto.component.css'
 })
 export class ProductoComponent {
-  constructor(private productoService: ProductoService){}
+  destacados: Producto[][];
+  productos: Producto[];
+ 
+  constructor(private productoService: ProductoService,private router: Router){
+    this.destacados=[];
+    this.productos=[];
+  }
+
+  ngOnInit() {
+    this.obtenerProductosDestacados();
+    this.obtenerProductos();
+  }
+/**Producto nuevo */
+  productoNuevo(): void {
+    this.router.navigate(['/producto-form',0]);
+  }
+  /**Modificar producto */
+  modificar(_id:String): void {
+    this.router.navigate(['/producto-form/',_id]);
+    this.obtenerProductosDestacados();
+  }
+/**Coloca los productos en una matriz*/
+  listarDestacados(productos: any[]): void {
+    let i=0,j=0,posProd=0;
+
+    while(posProd<productos.length){
+      if(j===3){
+        i++;
+        j=0;
+      }
+      if(!this.destacados[i]){
+        this.destacados[i]=[];
+      }
+      this.destacados[i][j]=productos[posProd];
+      j++;
+      posProd++;
+    }
+  }
+//SERVICIOS
 /**Retorna un lista de productos.*/
   obtenerProductos(): void {
     this.productoService.getProductos().subscribe(
       (resultado: any) => {
         console.log(resultado);
-      },
-      (error: any) => {
-        console.log(error);
-      }
-    );
-  }
-  /**Crea un producto.*/
-  crearProducto(): void {
-    let producto= {
-      nombre: "Sudadera con Capucha",
-      descripcion: "Sudadera calentita y confortable con capucha.",
-      imagen: "assets/img/no-imagen.png",
-      precio: 59.99,
-      stock: 50,
-      destacado: true
-    }
-    this.productoService. createProducto(producto).subscribe(
-      (resultado: any) => {
-        
-        console.log(resultado);
-      },
-      (error: any) => {
-        console.log(error);
-      }
-    );
-  }
-/**Retorna un producto por id.*/
-  obtenerProducto(): void {
-    let id = "6669f42e32b57aba47666ac7";
-    this.productoService.getProducto(id).subscribe(
-      (resultado: any) => {
-
-        console.log(resultado);
+        this.productos=resultado;
       },
       (error: any) => {
         console.log(error);
@@ -57,28 +65,12 @@ export class ProductoComponent {
     );
   }
   /**Elimina un producto por id.*/
-  eliminarProducto(): void {
-    let id = "666a5c5e7e99602883f171d5";//eliminado
+  eliminarProducto(id: String): void {
     this.productoService.deleteProducto(id).subscribe(
       (resultado: any) => {
         console.log(resultado);
-      },
-      (error: any) => {
-        console.log(error);
-      }
-    );
-  }
-  /** Modifica los datos de un producto por id.*/
-  modificarProducto(): void {
-    let producto= {
-      _id : "6669f42e32b57aba47666ac7",
-      nombre: "Camiseta Deportiva",
-      destacado: false
-    }
-    this.productoService.editProducto(producto).subscribe(
-      (resultado: any) => {
-        
-        console.log(resultado);
+        this.productos = this.productos.filter(p => p._id!== id);
+        this.destacados = this.destacados.map(element => element.filter(p => p._id!== id));
       },
       (error: any) => {
         console.log(error);
@@ -90,6 +82,7 @@ export class ProductoComponent {
     this.productoService.getProductosDestacados().subscribe(
       (resultado: any) => {
         console.log(resultado);
+        this.listarDestacados(resultado);
       },
       (error: any) => {
         console.log(error);

@@ -1,3 +1,77 @@
-<button type="button" class="btn btn-dark btn-lg my-3"  (click)="obtenerProductosDestacados()">
-    <i class="bi bi-cart3"> Mostrar Productos</i>
-</button>
+<div class="bg-black bg-opacidad rounded my-3 py-4">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div class="px-5">
+      <div class="carousel-inner px-5">
+        <div class="carousel-item active px-3" *ngFor="let destacado of destacados">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col" *ngFor="let producto of destacado">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="{{producto.nombre}}">
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate">{{producto.nombre}}</h5>
+                        <p class="card-text">{{producto.descripcion}}</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <small class="text-body-secondary">{{producto.precio}}</small>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<div class="bg-black bg-opacidad rounded my-3 p-4">
+  <h2 class="text-center text-white ">Lista de Productos</h2>
+  <button type="button" class="btn btn-success"  (click)="productoNuevo()">
+    <i class="bi bi-cart3"> Producto Nuevo</i>
+  </button>
+  <div class="table-responsive-md my-3">
+      <table class="table table-hover" >
+          <thead class="table-dark">
+              <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Stock</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col" class="text-center">Destacado</th>
+                  <th scope="col" class="text-center" colspan="2">Acciones</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of productos">
+                  <td>{{p.nombre}}</td>
+                  <td>{{p.descripcion}}</td>
+                  <td>{{p.stock}}</td>
+                  <td>{{p.precio}}</td>
+                  <td class="text-center">
+                    <i class="bi bi-star-fill text-warning" *ngIf="p.destacado"></i>
+                    <i class="bi bi-star text-warning" *ngIf="!p.destacado"></i>
+                   
+                    <!--button type="button" class="btn btn-secondary" *ngIf="!p.destacado">
+                      <i class="bi bi-star"></i>
+                    </button-->
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-danger" (click)="eliminarProducto(p._id)">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-info" (click)="modificar(p._id)">
+                      <i class="bi bi-pen-fill"></i>
+                    </button>
+                  </td>
+            </tr>
+          </tbody>
+        </table>
+  </div>

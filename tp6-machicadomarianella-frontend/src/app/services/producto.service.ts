@@ -19,7 +19,7 @@ export class ProductoService {
     return this._http.get(this.urlProductos, httpOptions); 
   }
   /**Crea un producto.*/
-  public createProducto(producto: Producto):Observable<any>{ 
+  public createProducto(producto: any):Observable<any>{ 
     const httpOptions = { 
       headers: new HttpHeaders({ 
         'Content-Type': 'application/json'

@@ -1,5 +1,5 @@
 export class Producto {
-    _id?: string;
+    _id: String;
     nombre?: String;
     descripcion?: String;
     imagen?:String;
