@@ -1,3 +1,110 @@
-<button type="button" class="btn btn-dark btn-lg my-3"  (click)="obtenerTransaccionesPorDivisas()">
-    <i class="bi bi-cash-coin"> Mostrar Transacciones</i>
-</button>
+<div class="bg-black bg-opacidad text-white rounded my-3 p-4">
+    <h2 class="text-center">Tabla de Transacciones</h2>
+    <div class="row">
+        <div class="col-12 mb-3">
+            <button type="button" class="btn btn-success mt-4"  (click)="obtenerTransacciones()">
+                <i class="bi bi-cash-coin"> Mostrar Transacciones</i>
+            </button>
+        </div>
+        <div class="col-12 mb-3">
+            <label for="floatingSelect">Filtrar por email</label>
+            <select class="form-select" id="floatingSelect"  [(ngModel)]="emailSeleccionado" (change)="obtenerTransaccionesPorEmail()">
+                <option *ngFor="let e of emails" [ngValue]="e.emailCliente" >{{e.emailCliente}}</option>
+            </select>
+        </div>
+        <div class="col-12 mb-3">
+            <div class="row">
+                <div class="col-5">
+                    <label for="floatingSelect">Moneda Origen</label>
+                    <select class="form-select" id="floatingSelect"  [(ngModel)]="monedaOrigen">
+                        <option *ngFor="let e of emails" [ngValue]="e.monedaOrigen" >{{e.monedaOrigen}}</option>
+                    </select>
+                </div>
+                <div class="col-5">
+                    <label for="floatingSelect">Moneda Destino</label>
+                    <select class="form-select" id="floatingSelect"  [(ngModel)]="monedaDestino">
+                        <option *ngFor="let e of emails" [ngValue]="e.monedaDestino" >{{e.monedaDestino}}</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn btn-success mt-4 w-100"  (click)="obtenerTransaccionesPorDivisas()">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-8 p-0 text-center">
+            <h3 class="titulo-principal p-2 rounded">Transacciones</h3>
+            <div class="table-responsive rounded">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col">Moneda Origen</th>
+                        <th scope="col">Cantidad Origen</th>
+                        <th scope="col">Moneda Destino</th>
+                        <th scope="col">Cantidad Destino</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Tasa</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let t of transacciones">
+                      <tr>
+                        <td>{{t.monedaOrigen}}</td>
+                        <td>{{t.cantidadOrigen}}</td>
+                        <td>{{t.monedaDestino}}</td>
+                        <td>{{t.cantidadDestino}}</td>
+                        <td>{{t.emailCliente}}</td>
+                        <td>{{t.tasaConversion}}</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col col-md-4 d-none d-md-block text-white">
+            <h3 class="titulo-secundario text-center py-2 rounded">Conversor De Divisas</h3>
+            <form class="row gy-3 p-2 pt-0 m-0 fondo-secundario rounded">
+                <div class="col-12">
+                    <label for="cantidad" class="form-label">Cantidad</label>
+                    <input type="number" class="form-control" id="cantidad" placeholder="cantidad">
+                </div>
+                <div class="col-12">
+                    <label for="de" class="form-label">De</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>USD - Dólares EEUU</option>
+                        <option value="1">EUR - Moneda Europea</option>
+                        <option value="2">GBP - Libra de Gran Bretaña</option>
+                        <option value="3">JPY - Yen Japonés</option>
+                        <option value="4">CNY - Yuan Chino</option>
+                        <option value="5">AUD - Dólar Australiano</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="a" class="form-label">A</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>USD - Dólares EEUU</option>
+                        <option value="1">EUR - Moneda Europea</option>
+                        <option value="2">GBP - Libra de Gran Bretaña</option>
+                        <option value="3">JPY - Yen Japonés</option>
+                        <option value="4">CNY - Yuan Chino</option>
+                        <option value="5">AUD - Dólar Australiano</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <input type="number" class="form-control" id="resultado" disabled>
+                </div>
+                <div class="col-12 pb-4">
+                    <button class="btn btn-warning w-100" type="button">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>Convertir</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+           </form>
+        </div>
+    </div>
+</div>

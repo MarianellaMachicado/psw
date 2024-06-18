@@ -1,21 +1,52 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TransaccionService } from '../../services/transaccion.service';
+import { Transaccion } from '../../models/transaccion';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-transaccion',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './transaccion.component.html',
   styleUrl: './transaccion.component.css'
 })
 export class TransaccionComponent {
-  constructor(private transaccionService: TransaccionService) {}
+  transacciones!: Transaccion[];
+  emailSeleccionado!: String;
+  monedaOrigen!: String;
+  monedaDestino!: String;
+  emails!: Transaccion[];
+
+  constructor(private transaccionService: TransaccionService) {
+    this.initVars();
+    
+  }
+
+  initVars() {
+    this.transacciones=[];
+    this.emailSeleccionado="";
+    this.monedaOrigen="";
+    this.monedaDestino="";
+    this.emails=[];
+  }
+  ngOnInit() {
+    this.obtenerTransacciones();
+  }
+  extraerEmails(){
+    
+    Object.assign(this.emails,this.transacciones)
+
+    console.log(this.emails);
+  }
+  //SERVICES
   /**Retorna una lista de todas las transacciones.*/
   obtenerTransacciones(): void {
     this.transaccionService.getTransacciones().subscribe(
       (resultado: any) => {
         console.log(resultado);
+        this.transacciones=resultado;
+        this.extraerEmails();
       },
       (error: any) => {
         console.log(error);
@@ -43,10 +74,10 @@ export class TransaccionComponent {
   }
   /**Retorna una lista de transacciones de un cliente por su email.*/
   obtenerTransaccionesPorEmail(): void {
-    let email="user4@example.com";
-    this.transaccionService.getTransaccionesByEmail(email).subscribe(
+    this.transaccionService.getTransaccionesByEmail(this.emailSeleccionado).subscribe(
       (resultado: any) => {
         console.log(resultado);
+        this.transacciones=resultado;
       },
       (error: any) => {
         console.log(error);
@@ -55,11 +86,10 @@ export class TransaccionComponent {
   }
   /**Retorna una lista de transacciones, segun su moneda de origen y moneda de destino.*/
   obtenerTransaccionesPorDivisas(): void {
-    let origen="EUR";
-    let destino="GBP";
-    this.transaccionService.getTransaccionesByDivisas(origen,destino).subscribe(
+    this.transaccionService.getTransaccionesByDivisas(this.monedaOrigen,this.monedaDestino).subscribe(
       (resultado: any) => {
         console.log(resultado);
+        this.transacciones=resultado;
       },
       (error: any) => {
         console.log(error);

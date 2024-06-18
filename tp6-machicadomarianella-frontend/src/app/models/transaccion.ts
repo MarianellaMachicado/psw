@@ -4,7 +4,7 @@ export class Transaccion {
     cantidadOrigen?: Number; 
     monedaDestino?: String; 
     cantidadDestino?: Number; 
-    emailCliente?: String; 
+    emailCliente: String; 
     tasaConversion?: Number;
 
     constructor(){
