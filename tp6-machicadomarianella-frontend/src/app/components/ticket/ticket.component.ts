@@ -5,21 +5,34 @@ import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { EspectadorService } from '../../services/espectador.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-ticket',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './ticket.component.html',
   styleUrl: './ticket.component.css'
 })
 export class TicketComponent {
-  constructor(private ticketService: TicketService, private espectadorService: EspectadorService){}
+  tickets!: Ticket[];
+  categorias!:String[];
+  categoriaSeleciconada!:String;
+
+  constructor(private ticketService: TicketService, private espectadorService: EspectadorService){
+    this.initVars();
+  }
+  initVars(){
+    this.tickets=[];
+    this.categorias=["e","l"];
+    this.categoriaSeleciconada="";
+  }
   /**Retorna una lista con todos los tickets.*/
   obtenerTickets(): void {
     this.ticketService.getTickets().subscribe(
       (resultado: any) => {
         console.log(resultado);
+        this.tickets=resultado;
       },
       (error: any) => {
         console.log(error);
@@ -44,8 +57,7 @@ export class TicketComponent {
     );
   }
   /**Elimina un ticket por id.*/
-  eliminarTicket(): void {
-    let id = "666a5057c9276a0eab485f41";//eliminado
+  eliminarTicket(id:String): void {
     this.ticketService.deleteTicket(id).subscribe(
       (resultado: any) => {
         console.log(resultado);
@@ -56,9 +68,9 @@ export class TicketComponent {
     );
   }
    /** Modifica los datos de un ticket por id.*/
-  modificarTicket(): void {
+  modificarTicket(id:String): void {
     let ticket= {
-      _id: "666a7e7855f784407ef5be90",
+      _id: id,
       categoriaEspectador: "e",
     }
     this.ticketService.editTicket(ticket).subscribe(
@@ -72,10 +84,10 @@ export class TicketComponent {
   }
     /**Retorna una lista de tickets, segun la categoria del espectador (e:extranjero, l:local)*/
   obtenerTicketsPorCategoriaEspectador(): void {
-    let categoria = "e"
-    this.ticketService.getProductosByCategoriaEspectador(categoria).subscribe(
+    this.ticketService.getProductosByCategoriaEspectador(this.categoriaSeleciconada).subscribe(
       (resultado: any) => {
         console.log(resultado);
+        this.tickets=resultado;
       },
       (error: any) => {
         console.log(error);

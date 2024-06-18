@@ -19,7 +19,7 @@ export class TicketService {
     return this._http.get(this.urlTickets, httpOptions); 
   }
   /**Crea un ticket.*/
-  public createTicket(ticket: Ticket):Observable<any>{ 
+  public createTicket(ticket: any):Observable<any>{ 
     const httpOptions = { 
       headers: new HttpHeaders({ 
         'Content-Type': 'application/json'

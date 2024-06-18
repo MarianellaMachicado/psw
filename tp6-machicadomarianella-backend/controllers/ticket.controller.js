@@ -18,7 +18,7 @@ ticketCtrl.createTicket = async (req, res) => {
 }
 /**Retorna una lista con todos los tickets.*/
 ticketCtrl.getTickets = async (req, res) => {
-    var tickets = await Ticket.find().populate("espectador");;
+    var tickets = await Ticket.find().populate("espectador");
     res.json(tickets);
 }
 /**Elimina un ticket por id.*/
@@ -53,9 +53,9 @@ ticketCtrl.editTicket = async (req, res) => {
     }
 }
 /**Retorna una lista de tickets, segun la categoria del espectador (e:extranjero, l:local)*/
-ticketCtrl.getTicket = async (req, res) => {
+ticketCtrl.getTicketsByCategoria = async (req, res) => {
     const { categoria } = req.params;
-    const ticket = await Ticket.find({ categoriaEspectador: categoria});
+    const ticket = await Ticket.find({ categoriaEspectador: categoria}).populate("espectador");;
     res.json(ticket);
 }
 module.exports = ticketCtrl;

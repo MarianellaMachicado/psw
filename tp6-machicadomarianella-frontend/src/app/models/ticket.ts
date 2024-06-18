@@ -1,7 +1,7 @@
 import { Espectador } from "./espectador";
 
 export class Ticket {
-    _id?: string;
+    _id: String;
     precioTicket?: Number;  
     categoriaEspectador?: String;          
     fechaCompra?: String; 
